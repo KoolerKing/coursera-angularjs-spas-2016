@@ -2,8 +2,10 @@
 'use strict';
 
 angular.module('LunchCheck', [])
+.controller('LunchCheckController', LunchCheckController);
 
-.controller('LunchCheckController', function ($scope) {
+LunchCheckController.$inject = ['$scope'];
+function LunchCheckController ($scope) {
   var resMessages = ["Please enter data first.", "Enjoy!", "Too Much!"];
   $scope.inputList = "";
   $scope.itemCount = 0;
@@ -26,7 +28,7 @@ angular.module('LunchCheck', [])
       $scope.resultMessage = resMessages[2];
     }
   };
-});
+};
 
 function countItems (alist) {
   return alist.filter(checkString).length;
