@@ -32,7 +32,7 @@ function ShoppingListCheckoffService() {
 
 };
 
-ToBuyController.$inject = ['$scope', 'ShoppingListCheckoffService'];
+ToBuyController.$inject = ['ShoppingListCheckoffService'];
 function ToBuyController(Sscope, ShoppingListCheckoffService) {
   var buyList = this;
   buyList.tbItems = ShoppingListCheckoffService.getToBuyItems();
@@ -42,7 +42,7 @@ function ToBuyController(Sscope, ShoppingListCheckoffService) {
   };
 };
 
-AlreadyBoughtController.$inject = ['$scope', 'ShoppingListCheckoffService'];
+AlreadyBoughtController.$inject = ['ShoppingListCheckoffService'];
 function AlreadyBoughtController($scope, ShoppingListCheckoffService) {
   var boughtList = this;
   boughtList.abItems = ShoppingListCheckoffService.getAlreadyBoughtItems();
