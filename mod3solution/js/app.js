@@ -85,6 +85,11 @@ function MenuSearchService($http, ApiBasePath, $q) {
       })
   };
 
+//
+// Please note that although we weren't tasked with it, I implemented a simple cache
+// of the menu. The complete list doesn't change, so why not?
+//
+//
   service.getMatchedMenuItems = function(searchTerm) {
     if (!service.menu_items) {
       return $http({
