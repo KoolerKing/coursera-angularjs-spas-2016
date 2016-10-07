@@ -64,27 +64,7 @@ function FoundItemsDirective() {
 MenuSearchService.$inject = ['$http', 'ApiBasePath', '$q'];
 function MenuSearchService($http, ApiBasePath, $q) {
   var service = this;
-
-  service.getMenuItems = function () {
-    var response = $http({
-      method: "GET",
-      url: (ApiBasePath + "/menu_items.json")
-    });
-    return response;
-  };
-
-  service.getMatchedMenuItems3 = function(searchTerm) {
-      return $http({
-        method: "GET",
-        url: (ApiBasePath + "/menu_items.json")
-      }).then(function(response){
-        service.menu_items = response.data;
-        return itemFilter(service.menu_items, searchTerm);
-      }).catch(function(error){
-        console.log("Something went very wrong with the network request: ", error);
-      })
-  };
-
+  
 //
 // Please note that although we weren't tasked with it, I implemented a simple cache
 // of the menu. The complete list doesn't change, so why not?
