@@ -84,10 +84,6 @@
     };
 
     mds.getItemsForCategory = function(categoryShortName) {
-      var stuff = {
-        category: categoryShortName
-      };
-
       return $http({
         method: 'GET',
         url: ApiBasePath + "/menu_items.json",
