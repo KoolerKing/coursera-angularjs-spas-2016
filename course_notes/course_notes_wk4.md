@@ -386,7 +386,7 @@ Step 2: Inject the Resolve Property into the Controller
 <!-- OR -->
 <a ui-sref="view1({itemId: '{{someCtrl.someotherValue}}'})"></a>
 ```
-Notice the single quotes around the value/interpolated_value
+Notice the quotes around the parameter value/interpolated_value. That's not in the documentation, and I found it by experimentation.
 
 ##### Summary
 * State's url property can be declared with parameters

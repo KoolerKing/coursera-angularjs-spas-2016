@@ -15,7 +15,7 @@
     $stateProvider
     .state('home', {
       url: '/home',
-      template: '<div><a ui-sref="home">Home</a> > <a ui_sref="categories">Categories</a> > <a href="#/items/L">Show Lunch</a></div>'
+      template: '<div><a ui-sref="home">Home</a> > <a ui_sref="categories">Categories</a> > <a ui-sref="items()">Show All Items</a></div>'
     })
     .state('categories', {
       url: '/categories',
@@ -25,7 +25,7 @@
       resolve: {
         categoriesData: ['MenuDataService', function(MenuDataService) {
           return MenuDataService.getAllCategories().then(function(response) {
-            console.log("found categories data: ", response.data);
+            //console.log("found categories data: ", response.data);
             return response.data;
           });
         }]
@@ -41,10 +41,10 @@
       resolve: {
         itemsData: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
           var isn = $stateParams.itemSN;
-          console.log("found parameter: ", isn);
+          //console.log("found parameter: ", isn);
           return MenuDataService.getItemsForCategory(isn).then(function(response) {
             //var t2 = response.data.menu_items;
-            console.log("found response data: ", response.data);
+            //console.log("found response data: ", response.data);
             //return t2;
             return response.data;
           });
