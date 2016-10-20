@@ -1,0 +1,10 @@
+<div><a ui-sref="home">Home</a> > <a ui_sref="categories">Categories</a> > <a ui-sref="items()">Show All Items</a></div>
+<br />
+<div>
+  Categories Listing:
+</div>
+<ul>
+  <li ng-repeat="item in cvc.categories">
+    <a ui-sref="items( {itemSN: '{{item.short_name}}' } )" >{{item.short_name}}, {{item.id}}, {{item.name}}</a>
+  </li>
+</ul>

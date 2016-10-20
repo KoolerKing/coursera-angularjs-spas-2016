@@ -1,0 +1,13 @@
+<div><a ui-sref="home">Home Here!</a> > <a ui-sref="categories">Show Categories</a></div>
+<!-- <ul>
+  <li ng-repeat="item in $ctrl.items">
+    {{item.name}}
+  </li>
+</ul> -->
+<div ng-controller="CategoriesListController as clCtrl">
+
+
+<categories-list cats="clCtrl.cats" bp="clCtrl.apibp"></categories-list>
+<ui-view></ui-view>
+
+</div>

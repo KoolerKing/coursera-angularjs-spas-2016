@@ -1,0 +1,9 @@
+<div>
+  In categoriesList
+</div>
+<ul>
+  <li ng-repeat="item in $ctrl.cats">
+    <a ui-sref="categories.items({itemSN: {{item.short_name}}})">{{item.short_name}}, {{item.id}}, {{item.name}}</a>
+  </li>
+</ul>
+<!-- ng-click="$ctrl.loadItems({itemSN: {{item.short_name}}});" -->

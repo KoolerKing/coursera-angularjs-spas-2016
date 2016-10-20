@@ -380,10 +380,13 @@ Step 1: Set up URL Property with Param(s)
 
 Step 2: Inject the Resolve Property into the Controller
 ```html
-<a ui-sref="view1({itemId: someVal})">
+<a ui-sref="view1({itemId: 'someVal'})">
   Link to view with data
 </a>
+<!-- OR -->
+<a ui-sref="view1({itemId: '{{someCtrl.someotherValue}}'})"></a>
 ```
+Notice the single quotes around the value/interpolated_value
 
 ##### Summary
 * State's url property can be declared with parameters
