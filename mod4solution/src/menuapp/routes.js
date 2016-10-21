@@ -11,7 +11,7 @@
     $stateProvider
     .state('home', {
       url: '/home',
-      template: '<div><a ui-sref="home">Home</a> > <a ui_sref="categories">Categories</a> > <a ui-sref="items()">Show All Items</a></div><hr />'
+      templateUrl: 'src/menuapp/homeView.html'
     })
     .state('categories', {
       url: '/categories',
