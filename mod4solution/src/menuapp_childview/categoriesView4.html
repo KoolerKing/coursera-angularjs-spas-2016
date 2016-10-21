@@ -1,9 +1,12 @@
-<div><a ui-sref="home">Home</a> > <a ui_sref="categories">Categories</a> > <a ui-sref="categories.items({itemSN: ''})">Show All Items</a></div>
-<hr />
+<!-- <div><a ui-sref="home">Home</a> > <a ui_sref="categories">Categories</a> > <a ui-sref="categories.items({itemSN: ''})">Show All Items</a></div>
+<hr /> -->
 
-<div>
+<div class="categoriesContainer">
 Please make a selection from the following menu categories listing:
-</div>
-<menu-categories categories="cvc.categories"></menu-categories>
 
-<ui-view></ui-view>
+<menu-categories categories="cvc.categories"></menu-categories>
+</div>
+
+<div class="itemsContainer">
+  <ui-view></ui-view>
+</div>

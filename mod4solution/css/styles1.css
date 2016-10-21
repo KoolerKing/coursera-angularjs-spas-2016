@@ -1,3 +1,20 @@
 a:hover {
   background-color: yellow
 }
+
+div.categoriesContainer {
+  width: 40%;
+  float: left;
+  margin-right: 25px;
+}
+
+div.itemsContainer {
+  width: 40%;
+  float: left;
+  background-color: hsla(0, 100%, 70%, 0.3);
+  padding: 0, 0, 0, 15px;
+}
+
+span.siteSelector {
+  float: right;
+}
