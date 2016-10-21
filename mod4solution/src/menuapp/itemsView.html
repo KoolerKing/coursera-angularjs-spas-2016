@@ -1,10 +1,8 @@
-<div><a ui-sref="home">Home</a> > <a ui_sref="categories">Categories</a> > <a ui-sref="items()">Show All Items</a></div>
-<br />
+<div><a ui-sref="home">Home</a> > <a ui_sref="categories">Categories</a> > <a ui-sref="items({itemSN: ''})">Show All Items</a></div>
+<hr />
+
 <div>
-  Items Listing for a given category:
-</div>
-<div>
-  <b>{{ivc.category.name}}</b> <br />
+  Items Listing for <b>{{ivc.category.name}}:</b> <br />
   {{ivc.category.special_instructions}}
 </div>
 <items-for-category items="ivc.items"></items-for-category>
