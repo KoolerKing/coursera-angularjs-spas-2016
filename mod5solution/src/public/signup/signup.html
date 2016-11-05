@@ -1,4 +1,8 @@
 <div class="valForm" ng-controller="SignUpController as ctrl">
+  <h1>Newsletter Registration</h1>
+  <p>
+    For all things news and note worthy at David Chu's China Bistro, please complete the following form to have our wonderful newsletter automatically delivered to you at no charge ...
+  </p>
   <form novalidate name="signupForm">
     <h2>SignUp Form:</h2>
     <br />
@@ -56,7 +60,9 @@
            <br /><br />
     Favorite Menu Item Number:<br />
     <input type="text" name="favmenuitem" class="textin" ng-model="ctrl.favmenuitem"
-           required />
+           required
+           ng-blur="ctrl.blurTest();"
+           />
            <span ng-if="signupForm.favmenuitem.$error.required
                         && signupForm.favmenuitem.$touched">
              Please provide a menu item number.

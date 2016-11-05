@@ -42,6 +42,11 @@
           ctrl.statusmessage = resubmit_message;
         });
     };
+
+    ctrl.blurTest = function () {
+      //console.log("In blur test function.");
+    };
+
   };
 
 })();
