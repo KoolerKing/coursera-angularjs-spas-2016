@@ -1,0 +1,20 @@
+<div class="valForm" ng-controller="MyInfoController as ctrl">
+  <div ng-if="ctrl.isRegistered();">
+    <h3>Your registration details are: </h3>
+    <br />
+    Name: {{ ctrl.ui.fn }} {{ctrl.ui.ln}}<br />
+    Email Address: {{ ctrl.ui.ea }}<br />
+    Phone Number: {{ ctrl.ui.pn }}<br />
+    Favorite Menu Item: {{ ctrl.ui.fmi }}<br /><br />
+    Menu Item Id: {{ctrl.favdeets.id }}<br />
+    Menu Item Name: {{ctrl.favdeets.name }}<br />
+
+    <img width="250" height="150" ng-src="{{ctrl.basePath}}/images/{{ctrl.ui.fmi}}.jpg" alt="{{ctrl.favdeets.name}}">
+    <br />
+    Menu Item Description: {{ctrl.favdeets.description }}<br />
+
+  </div>
+  <span ng-if="!ctrl.isRegistered();">
+    Not Signed Up Yet. <a ui-sref="public.signup"> Sign Up Now!</a>
+  </span>
+</div>

@@ -1,0 +1,80 @@
+<div class="valForm" ng-controller="SignUpController as ctrl">
+  <form novalidate name="signupForm">
+    <h2>SignUp Form:</h2>
+    <br />
+    First Name:<br />
+    <input type="text" name="firstname" class="textin"
+           ng-model="ctrl.firstname"
+           required
+           ng-min-length="1"
+           ng-maxlength="12"
+           pattern = "[a-zA-Z]*"
+           />
+           <span ng-if="signupForm.firstname.$error.required
+                        && signupForm.firstname.$touched">
+              First name is required.
+           </span>
+           <span ng-if = " (!signupForm.firstname.$error.required && signupForm.firstname.$invalid)
+                           && signupForm.firstname.$touched">
+             Alphabetic names only please.
+           </span>
+           <br /><br />
+    Last Name:<br />
+    <input class="textin" type="text" name="lastname" ng-model="ctrl.lastname"
+           required
+           max-length="25"
+           pattern = "[a-zA-Z]*"
+           />
+           <span ng-if="signupForm.lastname.$error.required
+                        && signupForm.lastname.$touched">
+             Last name is required.
+           </span>
+           <span ng-if = " (!signupForm.lastname.$error.required && signupForm.lastname.$invalid)
+                           && signupForm.lastname.$touched">
+             Alphabetic names only please.
+           </span>
+           <br /><br />
+    Email Address:<br />
+    <input type="email" name="emailaddress" class="textin"
+           ng-model="ctrl.emailaddress"
+           required />
+           <span ng-if="(signupForm.emailaddress.$error.required ||
+                          signupForm.emailaddress.$invalid)
+                        && signupForm.emailaddress.$touched">
+             Must be a valid email address: handle@domain format
+           </span>
+           <br /><br />
+    Phone Number:<br />
+    <input type="text" name="phonenumber" class="textin" ng-model="ctrl.phonenumber"
+           required
+           pattern = "(\d{3})-(\d{3})-(\d{4})" />
+           <span ng-if="(signupForm.phonenumber.$invalid ||
+                         signupForm.phonenumber.$error.required)
+                        && signupForm.phonenumber.$touched">
+             Please format the phone number as: ###-###-####
+           </span>
+           <br /><br />
+    Favorite Menu Item Number:<br />
+    <input type="text" name="favmenuitem" class="textin" ng-model="ctrl.favmenuitem"
+           required />
+           <span ng-if="signupForm.favmenuitem.$error.required
+                        && signupForm.favmenuitem.$touched">
+             Please provide a menu item number.
+           </span>
+           <span ng-if="ctrl.badmenuitem">
+             No such menu number exists.
+           </span>
+           <br /><br />
+    <br />
+    <input type="submit" class="textin" value="Submit"
+           ng-disabled="signupForm.$invalid"
+           ng-click="ctrl.submit();" />
+
+
+  </form>
+  <br />
+  <div ng-if="ctrl.checking">
+    {{ ctrl.statusmessage }}
+  </div>
+
+</div>
