@@ -48,16 +48,6 @@ function routeConfig ($stateProvider) {
     .state('public.myinfo', {
       url: '/myinfo',
       templateUrl: 'src/public/myinfo/myinfo.html'
-      // controller: 'MyInfoController2',
-      // controllerAs: 'ctrl',
-      // resolve: {
-      //   userInfo: ['DataService', function(DataService) {
-      //     return DataService.getUserInfo();
-      //   }],
-      //   favdeets: ['DataService', function (DataService) {
-      //     return DataService.getItemDetails2(DataService.userinfo);
-      //   }]
-      // }
     });
 }
 })();
